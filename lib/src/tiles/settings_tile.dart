@@ -13,6 +13,7 @@ class SettingsTile extends AbstractSettingsTile {
     this.trailing,
     this.value,
     required this.title,
+    this.subtitle,
     this.description,
     this.onPressed,
     this.enabled = true,
@@ -30,6 +31,7 @@ class SettingsTile extends AbstractSettingsTile {
     this.trailing,
     this.value,
     required this.title,
+    this.subtitle,
     this.description,
     this.onPressed,
     this.enabled = true,
@@ -49,6 +51,7 @@ class SettingsTile extends AbstractSettingsTile {
     this.leading,
     this.trailing,
     required this.title,
+    this.subtitle,
     this.description,
     this.onPressed,
     this.enabled = true,
@@ -67,6 +70,9 @@ class SettingsTile extends AbstractSettingsTile {
 
   /// The widget at the center of the tile
   final Widget title;
+
+  /// The widget at the bottom of the [title] and above the [description]
+  final Widget? subtitle;
 
   /// The widget at the bottom of the [title]
   final Widget? description;
@@ -119,6 +125,7 @@ class SettingsTile extends AbstractSettingsTile {
           activeSwitchColor: activeSwitchColor,
           initialValue: initialValue ?? false,
           hideArrow: hideArrow,
+          subtitle: subtitle,
         );
       case DevicePlatform.web:
         return WebSettingsTile(

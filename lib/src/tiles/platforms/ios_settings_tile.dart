@@ -16,6 +16,7 @@ class IOSSettingsTile extends StatefulWidget {
     required this.enabled,
     required this.trailing,
     this.hideArrow = false,
+    this.subtitle,
     Key? key,
   }) : super(key: key);
 
@@ -31,9 +32,10 @@ class IOSSettingsTile extends StatefulWidget {
   final Color? activeSwitchColor;
   final Widget? trailing;
   final bool hideArrow;
+  final Widget? subtitle;
 
   @override
-  _IOSSettingsTileState createState() => _IOSSettingsTileState();
+  State<IOSSettingsTile> createState() => _IOSSettingsTileState();
 }
 
 class _IOSSettingsTileState extends State<IOSSettingsTile> {
@@ -252,6 +254,11 @@ class _IOSSettingsTileState extends State<IOSSettingsTile> {
                       ],
                     ),
                   ),
+                  if (widget.subtitle != null)
+                    Padding(
+                      padding: const EdgeInsetsDirectional.only(end: 16),
+                      child: widget.subtitle,
+                    ),
                   if (widget.description == null &&
                       additionalInfo.needToShowDivider)
                     Divider(
