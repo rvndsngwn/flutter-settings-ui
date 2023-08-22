@@ -37,7 +37,7 @@ class SettingsList extends StatelessWidget {
   final SettingsThemeData? darkTheme;
   final Brightness? brightness;
   final EdgeInsetsGeometry? contentPadding;
-  final List<AbstractSettingsSection> sections;
+  final List<Widget> sections;
   final ApplicationType applicationType;
 
   @override
