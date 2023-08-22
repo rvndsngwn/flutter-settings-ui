@@ -224,26 +224,46 @@ class _IOSSettingsTileState extends State<IOSSettingsTile> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
                     padding: const EdgeInsetsDirectional.only(end: 16),
                     child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Expanded(
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.only(
-                              top: 12.5 * scaleFactor,
-                              bottom: 12.5 * scaleFactor,
-                            ),
-                            child: DefaultTextStyle(
-                              style: TextStyle(
-                                color: widget.enabled
-                                    ? theme.themeData.settingsTileTextColor
-                                    : theme.themeData.inactiveTitleColor,
-                                fontSize: 16,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: EdgeInsetsDirectional.only(
+                                  top: 12.5 * scaleFactor,
+                                  bottom: widget.subtitle != null
+                                      ? 0 * scaleFactor
+                                      : 12.5 * scaleFactor,
+                                ),
+                                child: DefaultTextStyle(
+                                  style: TextStyle(
+                                    color: widget.enabled
+                                        ? theme.themeData.settingsTileTextColor
+                                        : theme.themeData.inactiveTitleColor,
+                                    fontSize: 16,
+                                  ),
+                                  child: widget.title!,
+                                ),
                               ),
-                              child: widget.title!,
-                            ),
+                              if (widget.subtitle != null)
+                                Padding(
+                                  padding: EdgeInsetsDirectional.only(
+                                    end: 16,
+                                    bottom: 12.5 * scaleFactor,
+                                  ),
+                                  child: widget.subtitle,
+                                ),
+                            ],
                           ),
                         ),
                         buildTrailing(
@@ -254,11 +274,6 @@ class _IOSSettingsTileState extends State<IOSSettingsTile> {
                       ],
                     ),
                   ),
-                  if (widget.subtitle != null)
-                    Padding(
-                      padding: const EdgeInsetsDirectional.only(end: 16),
-                      child: widget.subtitle,
-                    ),
                   if (widget.description == null &&
                       additionalInfo.needToShowDivider)
                     Divider(
