@@ -16,6 +16,7 @@ class SettingsTile extends AbstractSettingsTile {
     this.description,
     this.onPressed,
     this.enabled = true,
+    this.hideArrow = false,
     Key? key,
   }) : super(key: key) {
     onToggle = null;
@@ -32,6 +33,7 @@ class SettingsTile extends AbstractSettingsTile {
     this.description,
     this.onPressed,
     this.enabled = true,
+    this.hideArrow = false,
     Key? key,
   }) : super(key: key) {
     onToggle = null;
@@ -50,6 +52,7 @@ class SettingsTile extends AbstractSettingsTile {
     this.description,
     this.onPressed,
     this.enabled = true,
+    this.hideArrow = false,
     Key? key,
   }) : super(key: key) {
     value = null;
@@ -77,6 +80,7 @@ class SettingsTile extends AbstractSettingsTile {
   late final SettingsTileType tileType;
   late final bool? initialValue;
   late final bool enabled;
+  final bool hideArrow;
 
   @override
   Widget build(BuildContext context) {
@@ -114,6 +118,7 @@ class SettingsTile extends AbstractSettingsTile {
           enabled: enabled,
           activeSwitchColor: activeSwitchColor,
           initialValue: initialValue ?? false,
+          hideArrow: hideArrow,
         );
       case DevicePlatform.web:
         return WebSettingsTile(

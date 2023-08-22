@@ -15,6 +15,7 @@ class IOSSettingsTile extends StatefulWidget {
     required this.activeSwitchColor,
     required this.enabled,
     required this.trailing,
+    this.hideArrow = false,
     Key? key,
   }) : super(key: key);
 
@@ -29,6 +30,7 @@ class IOSSettingsTile extends StatefulWidget {
   final bool enabled;
   final Color? activeSwitchColor;
   final Widget? trailing;
+  final bool hideArrow;
 
   @override
   _IOSSettingsTileState createState() => _IOSSettingsTileState();
@@ -120,6 +122,7 @@ class _IOSSettingsTileState extends State<IOSSettingsTile> {
   Widget buildTrailing({
     required BuildContext context,
     required SettingsTheme theme,
+    required bool hideArrow,
   }) {
     final scaleFactor = MediaQuery.of(context).textScaleFactor;
 
@@ -145,14 +148,14 @@ class _IOSSettingsTileState extends State<IOSSettingsTile> {
             ),
             child: widget.value!,
           ),
-        if (widget.tileType == SettingsTileType.navigationTile)
+        if (widget.tileType == SettingsTileType.navigationTile && !hideArrow)
           Padding(
             padding: const EdgeInsetsDirectional.only(start: 6, end: 2),
             child: IconTheme(
               data: IconTheme.of(context)
                   .copyWith(color: theme.themeData.leadingIconsColor),
               child: Icon(
-                CupertinoIcons.chevron_forward,
+                Icons.arrow_forward_ios,
                 size: 18 * scaleFactor,
               ),
             ),
@@ -241,7 +244,11 @@ class _IOSSettingsTileState extends State<IOSSettingsTile> {
                             ),
                           ),
                         ),
-                        buildTrailing(context: context, theme: theme),
+                        buildTrailing(
+                          context: context,
+                          theme: theme,
+                          hideArrow: widget.hideArrow,
+                        ),
                       ],
                     ),
                   ),
