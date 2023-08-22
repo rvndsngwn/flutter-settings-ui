@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:settings_ui/settings_ui.dart';
 
@@ -90,7 +89,7 @@ class WebSettingsTile extends StatelessWidget {
                         ),
                         if (value != null)
                           Padding(
-                            padding: EdgeInsets.only(top: 4.0),
+                            padding: const EdgeInsets.only(top: 4.0),
                             child: DefaultTextStyle(
                               style: TextStyle(
                                 color: theme.themeData.tileDescriptionTextColor,
@@ -100,7 +99,7 @@ class WebSettingsTile extends StatelessWidget {
                           )
                         else if (description != null)
                           Padding(
-                            padding: EdgeInsets.only(top: 4.0),
+                            padding: const EdgeInsets.only(top: 4.0),
                             child: DefaultTextStyle(
                               style: TextStyle(
                                 color: theme.themeData.tileDescriptionTextColor,
@@ -133,7 +132,7 @@ class WebSettingsTile extends StatelessWidget {
                         padding: const EdgeInsetsDirectional.only(end: 8),
                         child: Switch(
                           activeColor: activeSwitchColor ??
-                              Color.fromRGBO(138, 180, 248, 1.0),
+                              const Color.fromRGBO(138, 180, 248, 1.0),
                           value: initialValue,
                           onChanged: onToggle,
                         ),
@@ -147,7 +146,7 @@ class WebSettingsTile extends StatelessWidget {
                     child: Switch(
                       value: initialValue,
                       activeColor: activeSwitchColor ??
-                          Color.fromRGBO(138, 180, 248, 1.0),
+                          const Color.fromRGBO(138, 180, 248, 1.0),
                       onChanged: onToggle,
                     ),
                   )

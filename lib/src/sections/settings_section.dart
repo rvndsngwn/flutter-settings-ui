@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:settings_ui/src/sections/abstract_settings_section.dart';
-import 'package:settings_ui/src/sections/platforms/android_settings_section.dart';
-import 'package:settings_ui/src/sections/platforms/ios_settings_section.dart';
-import 'package:settings_ui/src/sections/platforms/web_settings_section.dart';
-import 'package:settings_ui/src/tiles/abstract_settings_tile.dart';
-import 'package:settings_ui/src/utils/platform_utils.dart';
-import 'package:settings_ui/src/utils/settings_theme.dart';
+
+import '../../settings_ui.dart';
+import 'platforms/android_settings_section.dart';
+import 'platforms/ios_settings_section.dart';
+import 'platforms/web_settings_section.dart';
 
 class SettingsSection extends AbstractSettingsSection {
   const SettingsSection({

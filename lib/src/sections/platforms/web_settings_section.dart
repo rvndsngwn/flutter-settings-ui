@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:settings_ui/settings_ui.dart';
+
+import '../../../settings_ui.dart';
 
 class WebSettingsSection extends StatelessWidget {
   const WebSettingsSection({
@@ -60,12 +61,12 @@ class WebSettingsSection extends StatelessWidget {
       shrinkWrap: true,
       itemCount: tiles.length,
       padding: EdgeInsets.zero,
-      physics: NeverScrollableScrollPhysics(),
+      physics: const NeverScrollableScrollPhysics(),
       itemBuilder: (BuildContext context, int index) {
         return tiles[index];
       },
       separatorBuilder: (BuildContext context, int index) {
-        return Divider(
+        return const Divider(
           height: 0,
           thickness: 1,
         );

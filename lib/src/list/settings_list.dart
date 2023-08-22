@@ -1,9 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:settings_ui/src/sections/abstract_settings_section.dart';
-import 'package:settings_ui/src/utils/platform_utils.dart';
-import 'package:settings_ui/src/utils/settings_theme.dart';
-import 'package:settings_ui/src/utils/theme_provider.dart';
+
+import '../../settings_ui.dart';
+import '../utils/theme_provider.dart';
 
 enum ApplicationType {
   /// Use this parameter is you are using the MaterialApp
@@ -110,9 +109,9 @@ class SettingsList extends StatelessWidget {
       case DevicePlatform.iOS:
       case DevicePlatform.macOS:
       case DevicePlatform.windows:
-        return EdgeInsets.symmetric(vertical: 0);
+        return const EdgeInsets.symmetric(vertical: 0);
       case DevicePlatform.web:
-        return EdgeInsets.symmetric(vertical: 20);
+        return const EdgeInsets.symmetric(vertical: 20);
       case DevicePlatform.device:
         throw Exception(
           'You can\'t use the DevicePlatform.device in this context. '

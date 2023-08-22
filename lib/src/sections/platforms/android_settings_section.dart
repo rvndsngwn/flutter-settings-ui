@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:settings_ui/src/tiles/abstract_settings_tile.dart';
-import 'package:settings_ui/src/utils/settings_theme.dart';
+
+import '../../../settings_ui.dart';
 
 class AndroidSettingsSection extends StatelessWidget {
   const AndroidSettingsSection({
@@ -58,7 +58,7 @@ class AndroidSettingsSection extends StatelessWidget {
       shrinkWrap: true,
       itemCount: tiles.length,
       padding: EdgeInsets.zero,
-      physics: NeverScrollableScrollPhysics(),
+      physics: const NeverScrollableScrollPhysics(),
       itemBuilder: (BuildContext context, int index) {
         return tiles[index];
       },

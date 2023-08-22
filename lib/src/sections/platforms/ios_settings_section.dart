@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:settings_ui/settings_ui.dart';
-import 'package:settings_ui/src/tiles/platforms/ios_settings_tile.dart';
+
+import '../../../settings_ui.dart';
+import '../../tiles/platforms/ios_settings_tile.dart';
 
 class IOSSettingsSection extends StatelessWidget {
   const IOSSettingsSection({
@@ -57,7 +58,7 @@ class IOSSettingsSection extends StatelessWidget {
       shrinkWrap: true,
       itemCount: tiles.length,
       padding: EdgeInsets.zero,
-      physics: NeverScrollableScrollPhysics(),
+      physics: const NeverScrollableScrollPhysics(),
       itemBuilder: (BuildContext context, int index) {
         final tile = tiles[index];
 
