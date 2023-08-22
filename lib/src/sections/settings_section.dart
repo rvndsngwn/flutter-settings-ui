@@ -13,7 +13,7 @@ class SettingsSection extends AbstractSettingsSection {
     Key? key,
   }) : super(key: key);
 
-  final List<AbstractSettingsTile> tiles;
+  final List<Widget> tiles;
   final EdgeInsetsDirectional? margin;
   final Widget? title;
 
